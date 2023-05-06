@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - /home/install/projeto/data/index.html:/usr/local/apache2/htdocs/index.html
+    networks:
+      - rede-web
+
+networks:
+  rede-web:
+    driver: bridge
